@@ -21,7 +21,7 @@ public class Game {
                     System.out.print(card.getColor());
                 }
                 else{
-                    System.out.print("N");
+                    System.out.print("*");
                 }
             }
             System.out.println();
