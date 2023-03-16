@@ -1,21 +1,20 @@
 package org;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Game {
-    private final static int numPlayers = 2;
+public class GameLogic {
     private Board board;
+    private Player[] players;
 
 
-    public Game(){
+    public GameLogic(int numPlayers, Player[] players){
         this.board = new Board(numPlayers);
+        this.players = players;
     }
 
-    public void PrintBoard(){
-        Card[][] currentStatus = board.getBoard();
-        for(Card[] row : currentStatus){
+    public void printBoard(){
+        for(Card[] row : board.getBoard()){
             for(Card card : row){
                 if(card != null){
                     System.out.print(card.getColor());
@@ -28,16 +27,13 @@ public class Game {
         }
     }
 
-    public void PrintAvailable(){
-        Map<Integer[], Card> av = board.getAvailable();
-        for(Map.Entry<Integer[], Card> pos : av.entrySet()){
+    public void printAvailable(){
+        for(Map.Entry<Integer[], Card> pos : board.getAvailable().entrySet()){
             System.out.println(pos.getKey()[0] + " " + pos.getKey()[1] + " " + pos.getValue().getColor());
         }
     }
 
-    public static void main(String[] args) {
-        Game g = new Game();
-        g.PrintBoard();
-        g.PrintAvailable();
+    public Map<Integer[], Card> getAvailable() {
+        return board.getAvailable();
     }
 }

@@ -14,7 +14,7 @@ public class Bag {
     public Bag(){
         this.randomizer = new Random();
 
-        this.CreateAndShuffle();
+        this.createAndShuffle();
     }
 
     public Card draw(){
@@ -24,12 +24,12 @@ public class Bag {
         return null;
     }
 
-    public void Reset(){
+    public void reset(){
         this.currentIndex = 0;
-        this.Shuffle();
+        this.shuffle();
     }
 
-    private void CreateAndShuffle(){
+    private void createAndShuffle(){
         int i = 0;
         this.cards = new Card[DIMENSION];
         this.currentIndex = 0;
@@ -39,10 +39,10 @@ public class Bag {
             }
         }
 
-        this.Shuffle();
+        this.shuffle();
     }
 
-    private void Shuffle(){
+    private void shuffle(){
         for(int i = 0; i < DIMENSION; i++){
             int n = randomizer.nextInt(DIMENSION);
             Card temp = this.cards[i];

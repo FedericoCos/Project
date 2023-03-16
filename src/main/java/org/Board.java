@@ -20,11 +20,11 @@ public class Board {
         this.bag = new Bag();
         this.chart = new Short[ROWS][COLS];
 
-        this.CreateChart();
-        this.Fill(type);
+        this.createChart();
+        this.fill(type);
     }
 
-    private void CreateChart(){
+    private void createChart(){
         File file = new File("C:\\Users\\fedec\\OneDrive\\Desktop\\Universita'\\Ingegneria del Software" +
                                         "\\Test1\\src\\main\\java\\org\\BoardText.txt");
         Scanner sc;
@@ -74,7 +74,7 @@ public class Board {
         }
         return false;
     }
-    public void Fill(int type){
+    public void fill(int type){
         for(int i = 0; i < ROWS; i++){
             for(int j = 0; j < COLS; j++){
                 if(this.chart[i][j] <= type && this.board[i][j] == null){
