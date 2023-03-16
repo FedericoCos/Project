@@ -25,8 +25,7 @@ public class Board {
     }
 
     private void createChart(){
-        File file = new File("C:\\Users\\fedec\\OneDrive\\Desktop\\Universita'\\Ingegneria del Software" +
-                                        "\\Test1\\src\\main\\java\\org\\BoardText.txt");
+        File file = new File(System.getProperty("user.dir") + "//src//main//java//org//BoardText.txt");
         Scanner sc;
         try {
             sc = new Scanner(file);
